@@ -1,13 +1,18 @@
 # debugger-report
 
-%NPM: debugger-report%
+`debugger-report` is a Node.js package to reproduce a bug in VS Code when debugger opens incorrect file.
 
-`debugger-report` is a new Node.js npm package. A package to reproduce a bug in VS Code when debugger opens incorrect file.
+## Steps to Reproduce
+
+1. Clone the repository.
 
 ```sh
-yarn add -E debugger-report
+git clone https://github.com/artdecocode/debugger-report.git
+code debugger-report
 ```
 
-## Table Of Contents
+2. Open `test/spec/index.js` and set a breakpoint and line 15.
 
-%TOC%
+3. Hit `F5` and wait for the debugger to start. It will pause in the `src/index.js` file at line 15 rather than in `test/spec/index.js`.
+
+![replay of the bug](appshot-debugger.gif)

@@ -1,39 +1,21 @@
 # debugger-report
 
-[![npm version](https://badge.fury.io/js/debugger-report.svg)](https://npmjs.org/package/debugger-report)
+`debugger-report` is a Node.js package to reproduce a bug in VS Code when debugger opens incorrect file.
 
-`debugger-report` is a new Node.js npm package. A package to reproduce a bug in VS Code when debugger opens incorrect file.
+## Steps to Reproduce
+
+1. Clone the repository.
 
 ```sh
-yarn add -E debugger-report
+git clone https://github.com/artdecocode/debugger-report.git
+code debugger-report
 ```
 
-## Table Of Contents
+2. Open `test/spec/index.js` and set a breakpoint and line 15.
 
-- [Table Of Contents](#table-of-contents)
-- [API](#api)
-  * [`debuggerReport(arg1: string, arg2?: boolean)`](#mynewpackagearg1-stringarg2-boolean-void)
+3. Hit `F5` and wait for the debugger to start. It will pause in the `src/index.js` file at line 15 rather than in `test/spec/index.js`.
 
-## API
-
-The package is available by importing its default function:
-
-```js
-import debuggerReport from 'debugger-report'
-```
-
-### `debuggerReport(`<br/>&nbsp;&nbsp;`arg1: string,`<br/>&nbsp;&nbsp;`arg2?: boolean,`<br/>`): void`
-
-Call this function to get the result you want.
-
-```js
-/* yarn example */
-import debuggerReport from 'debugger-report'
-
-(async () => {
-  await debuggerReport()
-})()
-```
+![replay of the bug](appshot-debugger.gif)
 
 ---
 
